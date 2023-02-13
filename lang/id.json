@@ -13,5 +13,6 @@
     "UPDATE_SUCCESS": "Mengganti data {title} berhasil",
     "ID_NOT_FOUND": "ID tidak di temukan",
     "CREATE_SUCCESS": "Menambah data {title} berhasil",
-    "DELETE_SUCCESS": "Menghapus data {title} berhasil"
+    "DELETE_SUCCESS": "Menghapus data {title} berhasil",
+    "CARD_NOT_FOUND": "Kartu tidak ditemukan"
 }
