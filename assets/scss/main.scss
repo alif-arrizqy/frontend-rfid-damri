@@ -1,0 +1,39 @@
+html, 
+body {
+    padding: 0;
+    overflow: hidden !important;
+}
+
+// layout
+.frame-content {
+    height: 80vh;
+    overflow-y: auto;
+}
+
+.frame-content::-webkit-scrollbar {
+    width: 5px;
+}
+
+.frame-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 100px;
+}
+
+.frame-content::-webkit-scrollbar-thumb {
+    background: rgb(184, 177, 177);
+    border-radius: 100px;
+}
+
+// loading
+.spin-loading {
+    animation: spin 1s infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

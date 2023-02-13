@@ -1,0 +1,17 @@
+{
+    "FIELD_REQUIRED": "{field} harus di isi",
+    "EMAIL_INVALID": "format email tidak valid",
+    "FIELD_MIN_LENGTH": "{field} minimal {length} karakter",
+    "FIELD_CONFIRM": "{confirm} tidak sama dengan {field}",
+
+    "AUTH_REQUIRED": "Anda harus login untuk mengakses halaman tersebut.",
+    "USER_NOT_FOUND": "Email tidak ditemukan",
+    "PASSWORD_INCORRECT": "Password yang anda masukan salah",
+    "EMAIL_ALREADY_EXIST": "Email sudah terdaftar",
+    "PASSWORD_MUST_MACTH": "Password harus sama",
+
+    "UPDATE_SUCCESS": "Mengganti data {title} berhasil",
+    "ID_NOT_FOUND": "ID tidak di temukan",
+    "CREATE_SUCCESS": "Menambah data {title} berhasil",
+    "DELETE_SUCCESS": "Menghapus data {title} berhasil"
+}
