@@ -1,0 +1,10 @@
+version: '3.9'
+
+services:
+  vue-damri-app:
+    container_name: vue-damri
+    build: .
+    restart: always
+    ports:
+      - 3001:80
+      
