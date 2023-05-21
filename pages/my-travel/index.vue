@@ -41,6 +41,7 @@ export default {
             travels: [],
             headers: [
                 { text: 'Card Id', value: 'cardId', sortable: false },
+                { text: 'Fullname', value: 'fullname', sortable: false },
                 { text: 'Departure', value: 'departure', sortable: false },
                 { text: 'Time In', value: 'timeIn', sortable: false },
                 { text: 'Destination', value: 'destination', sortable: false },
@@ -79,20 +80,24 @@ export default {
                         .$get(`/travel/travel-history/${respCardId}`)
                         .then((resp) => {
                             this.loading = false
-                            const travel = resp.travelHistory
-                            travel.map((item) => {
-                                const timesIn = item.timeIn
+                            const travel = resp.newTravelHistory
+                            // travel.map((item) => {
+                                // })
+                                // this.travels = travel
+                                const timesIn = travel.timeIn
                                 const timeIn = new Date(timesIn * 1000)
                                 const tglIn = timeIn.toLocaleDateString()
                                 const waktuIn = timeIn.toLocaleTimeString()
-                                item.timeIn = `${tglIn} ${waktuIn}`
-                                const timesOut = item.timeOut
+                                travel.timeIn = `${tglIn} ${waktuIn}`
+                                const timesOut = travel.timeOut
                                 const timeOut = new Date(timesOut * 1000)
                                 const tglOut = timeOut.toLocaleDateString()
                                 const waktuOut = timeOut.toLocaleTimeString()
-                                item.timeOut = `${tglOut} ${waktuOut}`
-                            })
-                            this.travels = travel
+                                travel.timeOut = `${tglOut} ${waktuOut}`
+                                console.log(travel);
+                                const arrayTravel = []
+                                // arrayTravel.push(travel)
+                                this.travels.push(travel)
                         })
                         .catch((err) => {
                             this.loading = false

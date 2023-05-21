@@ -41,6 +41,7 @@ export default {
             travels: [],
             headers: [
                 { text: 'Card Id', value: 'cardId', sortable: false },
+                { text: 'Fullname', value: 'fullname', sortable: false },
                 { text: 'Departure', value: 'departure', sortable: false },
                 { text: 'Time', value: 'timeIn', sortable: false },
             ],
@@ -77,14 +78,22 @@ export default {
                         .$get(`/travel/travel-realtime/${respCardId}`)
                         .then((resp) => {
                             this.loading = false
-                            let datas = []
-                            datas.push(resp.travelRealtime)
-                            const times = resp.travelRealtime.timeIn
+                            // let datas = []
+                            // datas.push(resp.newTravelRealtime)
+                            // const times = resp.newTravelRealtime.timeIn
+                            // const time = new Date(times * 1000)
+                            // const tgl = time.toLocaleDateString()
+                            // const waktu = time.toLocaleTimeString()
+                            // datas[0].timeIn = `${tgl} ${waktu}`
+                            // this.travels = datas
+                            
+                            const times = resp.newTravelRealtime.timeIn
                             const time = new Date(times * 1000)
                             const tgl = time.toLocaleDateString()
                             const waktu = time.toLocaleTimeString()
-                            datas[0].timeIn = `${tgl} ${waktu}`
-                            this.travels = datas
+                            // 
+                            resp.newTravelRealtime.timeIn = `${tgl} ${waktu}`
+                            this.travels.push(resp.newTravelRealtime)
                         })
                         .catch((err) => {
                             this.loading = false

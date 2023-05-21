@@ -70,6 +70,7 @@ export default {
 			users: [],
 			headers: [
 				{ text: 'No', value: 'row', sortable: false },
+				{ text: 'Card ID', value: 'cardId', sortable: false },
 				{ text: 'Fullname', value: 'fullname', sortable: false },
 				{ text: 'Email', value: 'email', sortable: false },
 				{ text: 'Role', value: 'role', sortable: false },

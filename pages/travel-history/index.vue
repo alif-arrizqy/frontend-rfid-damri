@@ -58,6 +58,7 @@ export default {
 			travel: [],
             headers: [
                 { text: 'Card Id', value: 'cardId', sortable: false },
+                { text: 'Fullname', value: 'fullname', sortable: false },
                 { text: 'Departure', value: 'departure', sortable: false },
                 { text: 'Time In', value: 'timeIn', sortable: false },
                 { text: 'Destination', value: 'destination', sortable: false },
