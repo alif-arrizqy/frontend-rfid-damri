@@ -81,23 +81,20 @@ export default {
                         .then((resp) => {
                             this.loading = false
                             const travel = resp.newTravelHistory
-                            // travel.map((item) => {
-                                // })
-                                // this.travels = travel
-                                const timesIn = travel.timeIn
+                            const response = travel.map((item) => {
+                                const timesIn = item.timeIn
                                 const timeIn = new Date(timesIn * 1000)
                                 const tglIn = timeIn.toLocaleDateString()
                                 const waktuIn = timeIn.toLocaleTimeString()
-                                travel.timeIn = `${tglIn} ${waktuIn}`
-                                const timesOut = travel.timeOut
+                                item.timeIn = `${tglIn} ${waktuIn}`
+                                const timesOut = item.timeOut
                                 const timeOut = new Date(timesOut * 1000)
                                 const tglOut = timeOut.toLocaleDateString()
                                 const waktuOut = timeOut.toLocaleTimeString()
-                                travel.timeOut = `${tglOut} ${waktuOut}`
-                                console.log(travel);
-                                const arrayTravel = []
-                                // arrayTravel.push(travel)
-                                this.travels.push(travel)
+                                item.timeOut = `${tglOut} ${waktuOut}`
+                                return item
+                            })
+                            this.travels = response
                         })
                         .catch((err) => {
                             this.loading = false
